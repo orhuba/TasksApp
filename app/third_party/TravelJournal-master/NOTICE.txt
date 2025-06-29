@@ -1,0 +1,4 @@
+This code was originally written by [Original Author] and is licensed under the MIT License.
+Original repository:   https://github.com/dytlabs/TravelJournal 
+Changes made: Minor bug fixes and adaptation to our codebase.
+
