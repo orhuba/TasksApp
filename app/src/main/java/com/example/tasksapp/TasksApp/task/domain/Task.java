@@ -1,14 +1,14 @@
-package com.example.tasksapp.assistantApp.task.domain;
+package com.example.tasksapp.TasksApp.task.domain;
 
-import com.example.tasksapp.assistantApp.core.utils.Utils;
+import com.example.tasksapp.TasksApp.core.utils.Utils;
 
-public class Task {
+public class Task{
     public final String DEFAULT_CATEGORY = "General";
     public final Utils.Priority DEFAULT_PRIORITY = Utils.Priority.Medium;
     public final String DEFAULT_STATUS = "Not Completed";
     public final String DEFAULT_DESCRIPTION = "No Description";
     public final String DEFAULT_DEADLINE = "No Deadline";
-    public final String DEFAULT_TITLE = "No Title";
+    public final String DEFAULT_TITLE = "Task";
     public final String DEFAULT_FILES = "No Files";
     public final String DEFAULT_DATE = "Today";
 
@@ -35,10 +35,24 @@ public class Task {
         _priority = priority;
         _category = category;
     }
-    /*public Task(){ // TODO: complete empty constructor
-        _id = getFirstOpenId();
+    public Task(){ // TODO: complete empty constructor
+        _id = 0;
+        _creationDate = DEFAULT_DATE;
+        _deadline = DEFAULT_DEADLINE;
+        _title = DEFAULT_TITLE;
+        _description = DEFAULT_DESCRIPTION;
+        _isCompleted = false;
+        _attachedFiles = DEFAULT_FILES;
+        _priority = DEFAULT_PRIORITY;
+        _category = DEFAULT_CATEGORY;
+    }
 
-    }*/
+    public String getTitle(){
+        return _title;
+    }
+    public void setComleted(){
+        _isCompleted = true;
+    }
 
 
 

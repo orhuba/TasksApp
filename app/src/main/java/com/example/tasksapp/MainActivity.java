@@ -10,6 +10,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.tasksapp.TasksApp.task.domain.Task;
+import com.example.tasksapp.TasksApp.task.domain.TaskListAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ListView listView = findViewById(R.id.list);
         //int resource = android.R.layout.two_line_list_item;
-        String[] tasks = {"Task 1", "Task 2", "Task 3", "Task 4", "Task 5", "Task 6", "Task 7", "Task 8", "Task 9", "Task 10", "Task 11", "Task 12"
-        , "Task 13", "Task 14", "Task 15", "Task 16", "Task 17", "Task 18", "Task 19", "Task 20", "Task 21", "Task 22", "Task 23", "Task 24", "Task 25"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_checked,tasks);
+        List<Task> tasks = new ArrayList<>();
+        for(int i=0; i<20; i++){
+            tasks.add(new Task());
+        }
+        TaskListAdapter adapter = new TaskListAdapter(this, tasks);
         listView.setAdapter(adapter);
 
     }
