@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tasksapp.TasksApp.core.storage.LocalGson;
 import com.example.tasksapp.TasksApp.task.domain.Task;
 import com.example.tasksapp.TasksApp.task.domain.TasksRecycleViewAdapter;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button addTaskButton = findViewById(R.id.addTaskButton);
         RecyclerView recyclerView = findViewById(R.id.TasksRecycleView);
-        ArrayList<Task> tasks = new ArrayList<>();
+        ArrayList<Task> tasks = LocalGson.loadTasks(this);
         //show tasks
         TasksRecycleViewAdapter adapter = new TasksRecycleViewAdapter(this, tasks);
         recyclerView.setAdapter(adapter);
@@ -46,5 +47,6 @@ public class MainActivity extends AppCompatActivity {
             });
             bottomSheetDialog.show();
         });
+        LocalGson.saveTasks(this, tasks);
     }
 }

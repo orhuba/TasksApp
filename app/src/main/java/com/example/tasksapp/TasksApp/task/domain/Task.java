@@ -39,7 +39,7 @@ public class Task{
         _priority = priority;
         _category = category;
     }
-    public Task(){ // TODO: complete empty constructor
+    public Task(){
         _id = 0;
         _creationDate = DEFAULT_DATE;
         _deadline = DEFAULT_DEADLINE;
