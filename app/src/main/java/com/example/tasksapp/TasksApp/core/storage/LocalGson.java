@@ -23,6 +23,12 @@ public class LocalGson{
         editor.apply();
 
     }
+    public static void deleteTasks(Context context){// TODO: complete delete tasks method
+        SharedPreferences sharedPreferences = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(KEY_TASK_LIST);
+        editor.apply();
+    }
     public static ArrayList<Task> loadTasks(Context context){
         SharedPreferences sharedPreferences = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
         String json = sharedPreferences.getString(KEY_TASK_LIST, null);
