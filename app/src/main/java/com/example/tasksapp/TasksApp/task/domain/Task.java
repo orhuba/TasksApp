@@ -50,6 +50,17 @@ public class Task{
         _priority = DEFAULT_PRIORITY;
         _category = DEFAULT_CATEGORY;
     }
+    public Task(String taskTitle){
+        _id = 0;
+        _creationDate = DEFAULT_DATE;
+        _deadline = DEFAULT_DEADLINE;
+        _title = taskTitle;
+        _description = DEFAULT_DESCRIPTION;
+        _isCompleted = false;
+        _attachedFiles = DEFAULT_FILES;
+        _priority = DEFAULT_PRIORITY;
+        _category = DEFAULT_CATEGORY;
+    }
 
     public String getTitle(){
         return _title;
