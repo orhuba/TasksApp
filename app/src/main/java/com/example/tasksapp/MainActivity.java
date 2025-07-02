@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 tasks.add(new Task(editText.getText().toString()));
                 bottomSheetDialog.dismiss();
                 adapter.notifyDataSetChanged();
+                LocalGson.saveTasks(this, tasks);
             });
             bottomSheetDialog.show();
         });
-        LocalGson.saveTasks(this, tasks);
+
     }
 }

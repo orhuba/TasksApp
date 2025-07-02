@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tasksapp.R;
+import com.example.tasksapp.TasksApp.core.storage.LocalGson;
 
 import java.util.ArrayList;
 
@@ -49,6 +50,7 @@ public class TasksRecycleViewAdapter extends RecyclerView.Adapter<TasksRecycleVi
         holder.button.setOnClickListener(v -> {
             task.changeStatus();
             notifyItemChanged(position);
+            LocalGson.saveTasks(this.context, tasks);
         });
 
 
