@@ -48,10 +48,7 @@ public class TasksRecycleViewAdapter extends RecyclerView.Adapter<TasksRecycleVi
             holder.button.setBackgroundColor(white);
         holder.button.setOnClickListener(v -> {
             task.changeStatus();
-            //holder.button.setBackgroundColor(green);
             notifyItemChanged(position);
-
-            //holder.button.setBackgroundColor(tasks.get(position).getCompleteButtomColor());
         });
 
 

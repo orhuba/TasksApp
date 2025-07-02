@@ -1,6 +1,8 @@
 package com.example.tasksapp;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.FrameLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +21,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        Button addTaskButton = findViewById(R.id.addTaskButton);
         RecyclerView recyclerView = findViewById(R.id.TasksRecycleView);
-        //int resource = android.R.layout.two_line_list_item;
         ArrayList<Task> tasks = new ArrayList<>();
+        addTaskButton.setOnClickListener(v -> {
+            /// /
+        });
         for(int i=0; i<20; i++){
             tasks.add(new Task());
             tasks.get(i);
