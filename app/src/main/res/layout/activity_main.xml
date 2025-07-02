@@ -27,18 +27,21 @@
                 android:textSize="35sp" />
         </FrameLayout>
 
-        <FrameLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            android:layout_weight="120">
+            android:layout_weight="120"
+            android:background="@color/white">
 
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/TasksRecycleView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/list">
-            </ListView>
-        </FrameLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <FrameLayout
             android:layout_width="match_parent"

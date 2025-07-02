@@ -1,5 +1,9 @@
 package com.example.tasksapp.TasksApp.task.domain;
 
+import android.content.Context;
+import android.graphics.Color;
+
+import com.example.tasksapp.R;
 import com.example.tasksapp.TasksApp.core.utils.Utils;
 
 public class Task{
@@ -50,10 +54,14 @@ public class Task{
     public String getTitle(){
         return _title;
     }
-    public void setComleted(){
-        _isCompleted = true;
+    public boolean isCompleted(){
+        return _isCompleted;
     }
-
-
-
+    public void changeStatus(){
+        if(_isCompleted){
+            _isCompleted = false;
+        }
+        else
+            _isCompleted = true;
+    }
 }
