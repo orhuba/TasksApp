@@ -18,13 +18,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/taskTitleEditor"
-            app:layout_constraintVertical_bias="0.110000014" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/taskTitleEditor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="480dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
             android:hint="insert your task here"
             app:layout_constraintEnd_toEndOf="parent"

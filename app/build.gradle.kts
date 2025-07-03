@@ -35,6 +35,7 @@ android {
 dependencies {
     implementation ("com.google.android.flexbox:flexbox:3.0.0")
     implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
+    implementation ("com.google.code.gson:gson:2.13.1")
     // TODO: Add the dependencies for Firebase products you want to use
     // When using the BoM, don't specify versions in Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
