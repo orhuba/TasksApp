@@ -7,15 +7,17 @@ import com.example.tasksapp.R;
 import com.example.tasksapp.TasksApp.core.utils.Utils;
 
 public class Task{
-    public final String DEFAULT_CATEGORY = "General";
-    public final Utils.Priority DEFAULT_PRIORITY = Utils.Priority.Medium;
-    public final String DEFAULT_STATUS = "Not Completed";
-    public final String DEFAULT_DESCRIPTION = "No Description";
-    public final String DEFAULT_DEADLINE = "No Deadline";
-    public final String DEFAULT_TITLE = "Task";
-    public final String DEFAULT_FILES = "No Files";
-    public final String DEFAULT_DATE = "Today";
+    public static final long FIRST_TASK_ID = 10000;
+    public static final String DEFAULT_CATEGORY = "General";
+    public static final Utils.Priority DEFAULT_PRIORITY = Utils.Priority.Medium;
+    public static final String DEFAULT_STATUS = "Not Completed";
+    public static final String DEFAULT_DESCRIPTION = "No Description";
+    public static final String DEFAULT_DEADLINE = "No Deadline";
+    public static final String DEFAULT_TITLE = "Task";
+    public static final String DEFAULT_FILES = "No Files";
+    public static final String DEFAULT_DATE = "Today";
 
+    public static int tasksCount = 0;
     private long _id;
     private String _creationDate; //dd:mm:yyyy
     private String _deadline; //dd:mm:yyyy
@@ -40,31 +42,23 @@ public class Task{
         _category = category;
     }
     public Task(){
-        _id = 0;
-        _creationDate = DEFAULT_DATE;
-        _deadline = DEFAULT_DEADLINE;
-        _title = DEFAULT_TITLE;
-        _description = DEFAULT_DESCRIPTION;
-        _isCompleted = false;
-        _attachedFiles = DEFAULT_FILES;
-        _priority = DEFAULT_PRIORITY;
-        _category = DEFAULT_CATEGORY;
+        this(FIRST_TASK_ID+tasksCount,DEFAULT_DATE,DEFAULT_DEADLINE,DEFAULT_TITLE,DEFAULT_DESCRIPTION,
+                false,DEFAULT_FILES, DEFAULT_PRIORITY,DEFAULT_CATEGORY);
+        tasksCount++;
     }
     public Task(String taskTitle){
-        _id = 0;
-        _creationDate = DEFAULT_DATE;
-        _deadline = DEFAULT_DEADLINE;
+        this();
         _title = taskTitle;
-        _description = DEFAULT_DESCRIPTION;
-        _isCompleted = false;
-        _attachedFiles = DEFAULT_FILES;
-        _priority = DEFAULT_PRIORITY;
-        _category = DEFAULT_CATEGORY;
     }
 
     public String getTitle(){
         return _title;
     }
+    public long getId(){
+        return _id;
+    }
+
+
     public boolean isCompleted(){
         return _isCompleted;
     }
